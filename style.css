@@ -1,0 +1,142 @@
+@import url();
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #023535;
+}
+
+#clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+#hrDots,
+#minDots,
+#secDots {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  rotate: 90deg;
+}
+
+#hrDots::before,
+#minDots::before,
+#secDots::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  box-shadow:
+    25px 25px 75px #00000040,
+    10px 10px 70px #00000040,
+    inset 5px 5px 10px #00000080,
+    inset 5px 5px 20px #ffffff33,
+    inset -5px -5px 15px #000000bf;
+}
+
+#hrDots h2,
+#minDots h2,
+#secDots h2 {
+  position: absolute;
+  text-align: center;
+  transform: rotate(-90deg);
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 3.5rem;
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+  color: #F29325;
+}
+
+#hrDots h2 span,
+#minDots h2 span,
+#secDots h2 span {
+  position: absolute;
+  font-size: 0.8rem;
+  font-weight: 500;
+  bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+#hrDots b {
+  position: absolute;
+  color: #fff;
+  transform: rotate(-90deg) translate(-30px, 90px);
+}
+
+#secDots .dot,
+#minDots .dot,
+#hrDots .dot {
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 3px;
+  background: #FFAE00;
+  transform-origin: 100px;
+}
+
+#secDots .active.dot,
+#minDots .active.dot,
+#hrDots .active.dot {
+  background: #F29325;
+  box-shadow:
+    0 0 10px #F29325,
+    0 0 20px #F29325,
+    0 0 30px #F29325;
+}
+
+#secDots .active.dot~.dot,
+#minDots .active.dot~.dot,
+#hrDots .active.dot~.dot {
+  background: #B33F00;
+}
+
+#secDots .dot:nth-child(5n + 5),
+#minDots .dot:nth-child(5n + 5) {
+  width: 20px;
+}
+
+#hrDots .dot {
+  width: 20px;
+}
+
+#hrDots .dot::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  background: #F29325;
+  box-shadow:
+    1.5px 9px #F29325,
+    4px 18px #F29325,
+    7px 27px #F29325;
+}
+
+#hrDots .dot.active~.dot::before {
+  background: #B33F00;
+  box-shadow:
+    1.5px 9px #B33F00,
+    4px 18px #B33F00,
+    7px 27px #B33F00;
+
+}
