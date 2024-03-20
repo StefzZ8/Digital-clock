@@ -138,5 +138,23 @@ body {
     1.5px 9px #B33F00,
     4px 18px #B33F00,
     7px 27px #B33F00;
+}
 
+
+
+@media only screen and (max-width: 720px) {
+  #clock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+  #clock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 }
